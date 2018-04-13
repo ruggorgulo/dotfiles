@@ -1,0 +1,57 @@
+(custom-set-variables
+  ;; custom-set-variables was added by Custom.
+  ;; If you edit it by hand, you could mess it up, so be careful.
+  ;; Your init file should contain only one such instance.
+  ;; If there is more than one, they won't work right.
+ '(blink-cursor-mode nil)
+ '(c-basic-offset 4)
+ '(column-number-mode t)
+ '(indent-tabs-mode nil)
+ '(python-guess-indent nil)
+ '(scroll-bar-mode (quote right))
+ '(show-paren-mode t)
+ '(standard-indent 4)
+ '(tab-stop-list (quote (4 8 12 16 20 24 28 32 36 40 44 48 52 52 60)))
+ '(tool-bar-mode nil)
+ '(tooltip-mode nil)
+ '(transient-mark-mode (quote (only . t)))
+ '(whitespace-line-column 160))
+(custom-set-faces
+  ;; custom-set-faces was added by Custom.
+  ;; If you edit it by hand, you could mess it up, so be careful.
+  ;; Your init file should contain only one such instance.
+  ;; If there is more than one, they won't work right.
+ '(default ((t (:inherit nil :stipple nil :background "white" :foreground "black" :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight normal :height 96 :width normal :foundry "unknown" :family "DejaVu Sans Mono"))))
+ '(font-lock-comment-delimiter-face ((default (:inherit font-lock-comment-face :slant normal)) (((class color) (min-colors 16)) nil)))
+ '(font-lock-comment-face ((((class color) (min-colors 88) (background light)) (:foreground "SlateGray" :slant italic))))
+ '(linum ((t (:inherit (shadow default) :background "ivory2" :foreground "goldenrod" :slant italic))))
+ '(whitespace-line ((t (:background "lavender")))))
+
+
+; my directory with extensions
+; http://www.emacswiki.org/emacs/LoadPath
+(add-to-list 'load-path "~/emacs.d/")
+
+
+; disable theme background color in terminal
+(defun on-after-init ()
+  (unless (display-graphic-p (selected-frame))
+      (set-face-background 'default "unspecified-bg" (selected-frame))))
+(add-hook 'window-setup-hook 'on-after-init)
+
+(setq inhibit-startup-message t)        ; Disable startup message (buffer *GNU Emacs*)
+;(kill-buffer "*Messages*")
+
+;; show line number for each line
+(global-linum-mode t)
+
+;; show column
+(column-number-mode t)
+
+; HighLight -  each highlighted symbol to automatically use the next face/color from option hlt-auto-face-backgrounds
+; In Emacs 24.4, `M-s h .’ will be bound to ‘highlight-symbol-at-point’
+(setq hlt-auto-faces-flag t)
+(global-set-key (kbd "M-s h .") 'highlight-symbol-at-point)
+
+;; PuTTY fix.
+(define-key global-map [select] 'end-of-line)
