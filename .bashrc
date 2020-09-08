@@ -147,3 +147,14 @@ case $TERM in
     ;;
 esac
 export TERM
+
+if [ -n "$IS_INSIDE_IDEA" ] ; then
+    HISTFILE=/dev/null
+fi
+
+have_histfile()
+{
+    if [[ "$HISTFILE" = '/dev/null' ]] ; then echo '🍀' ; else echo '💾' ; fi
+	# 🖈📎
+}
+PS1='$(have_histfile)'" $PS1"
