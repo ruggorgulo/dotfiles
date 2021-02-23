@@ -1,4 +1,5 @@
-prog "Idea" /opt/idea-IU-183.5912.21/bin/idea.png /opt/idea-IU-183.5912.21/bin/idea.sh
+prog "Idea" /opt/idea-ultimate/bin/idea.png /opt/idea-ultimate/bin/idea.sh
+prog "Eclipse" /opt/eclipse/icon.xpm /opt/eclipse/eclipse 
 prog "Chromium" chromium-browser.png chromium-browser
 prog "Geany" geany.png geany
 prog "Meld" meld.png meld
