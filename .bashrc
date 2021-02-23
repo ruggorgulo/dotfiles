@@ -35,7 +35,7 @@ shopt -s interactive_comments
 
 # don't put duplicate lines or lines starting with space in the history.
 HISTCONTROL='ignorespace:ignoredups:erasedups'
-HISTIGNORE='cd *:ls:ls *:ll:ll *:la:la *:less *:eless *:cat *:history:ec *:python:em:em *'
+HISTIGNORE='cd *:ls:ls *:ll:ll *:la:la *:less *:eless *:cat *:history:ec *:python:em'
 
 # for setting history length see HISTSIZE and HISTFILESIZE in bash(1)
 HISTSIZE=1000
@@ -120,6 +120,8 @@ alias fgrep='fgrep --color=auto'
 alias egrep='egrep --color=auto'
 alias nano='nano -DSWkw'
 alias top='top -c'
+alias gradle='./gradlew'
+alias gw='./gradlew --no-daemon --console verbose'
 
 PS1='\[\033[1;35m\]\u\[\033[0m\]@\[\033[7;33m\]\h\[\033[0m\] \[\033[01;34m\]\w \$\[\033[0m\] '
 

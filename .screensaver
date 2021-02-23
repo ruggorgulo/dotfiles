@@ -1,0 +1,6 @@
+grabDesktopImages:  False
+grabVideoFrames:    False
+chooseRandomImages: True
+imageDirectory: /home/me/Pictures/
+mode:       random
+selected:   -1

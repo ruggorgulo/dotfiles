@@ -133,6 +133,10 @@ prefer for `sh-mode'.  It is automatically added to
 ;;  "Major mode for editing GitHub Flavored Markdown files" t)
 ;;(add-to-list 'auto-mode-alist '("README\\.md\\'" . gfm-mode))
 
+;; https://github.com/yoshiki/yaml-mode
+(autoload 'yaml-mode "yaml-mode" t)
+
+
 ;; Additional modes
 (setq auto-mode-alist
       (append
@@ -148,6 +152,7 @@ prefer for `sh-mode'.  It is automatically added to
        '(("\\.lua\\'" . lua-mode))
        '(("\\.markdown\\'" . markdown-mode))
        '(("\\.md\\'" . gfm-mode))
+       '(("\\.yml\\'" . yaml-mode))
        auto-mode-alist))
 
 
@@ -284,5 +289,7 @@ This functions should be added to the hooks of major modes for programming."
 
 (when window-system
   (global-set-key (kbd "C-x C-c") 'ask-before-closing))
+
+; (find-file "~/ToDoList.txt")
 
 ; emacs: -*- mode: emacs-lisp -*-
